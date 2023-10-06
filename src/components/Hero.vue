@@ -53,3 +53,9 @@ onMounted(() => {
         </div>
     </div>
 </template>
+<style scoped>
+.kanan{
+    background: url('/img/home-2.png')no-repeat;
+    background-size: cover;
+}
+</style>
