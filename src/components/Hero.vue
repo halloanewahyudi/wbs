@@ -1,6 +1,6 @@
 <script setup>
-import Logo from './Logo.vue';
 import gsap from 'gsap';
+import Logo from '/img/logo-white.svg'
 import { onMounted } from 'vue';
 function animasi() {
     gsap.timeline({ duration: 1 })
@@ -34,7 +34,7 @@ onMounted(() => {
 <template>
     <div
         class="min-h-screen overflow-x-hidden flex flex-col justify-center items-center bg-gradient-to-br from-brand-400 to-brand-600 text-white">
-        <img src="img/logo-white.svg" class="w-32 logo absolute top-10 left-10 z-50" alt="logo">
+        <img :src="Logo" class="w-32 logo absolute top-10 left-10 z-50" alt="logo">
         <div class=" lg:flex gap-5 items-center justify-between w-screen">
             <div class="min-h-screen flex flex-col justify-center px-6 py-10">
                 <div class="opening-text lg:-right-80 relative z-20 max-w-md">
@@ -53,8 +53,3 @@ onMounted(() => {
         </div>
     </div>
 </template>
-<style>
-.kanan {
-    background: url('img/home-2.png')no-repeat center;
-    background-size: cover;
-}</style>
