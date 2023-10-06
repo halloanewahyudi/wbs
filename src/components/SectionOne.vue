@@ -16,5 +16,5 @@ import SlideUp from './SlideUp.vue';
                     mewujudkan visi Anda dengan presisi dan keindahan.</p>
             </div>
         </slide-up>
-</div>
+    </div>
 </template>
