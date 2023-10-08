@@ -5,7 +5,7 @@ import { onMounted } from 'vue';
 function shoUp() {
     const boxes = gsap.utils.toArray('.box');
     boxes.forEach((box, i) => {
-        const anim = gsap.fromTo(box, { scale:1.1, y: 50 }, { duration: 1, scale: 1, y: 0 });
+        const anim = gsap.fromTo(box, { scale:1.1, translateY: 50 }, { duration: 1, scale: 1, translateY: 0 });
         ScrollTrigger.create({
             trigger: box,
             animation: anim,
@@ -24,3 +24,8 @@ onMounted(() => {
         <slot />
     </div>
 </template>
+<style scoped>
+.box{
+    position:relative;
+}
+</style>

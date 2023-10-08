@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue';
-import YoutubeItem from './YoutubeItem.vue';
+import { onMounted, ref } from 'vue';
 import VideoItem from './VideoItem.vue';
+import SlideUp from './SlideUp.vue';
 const video = ref(
     [
         {
@@ -31,9 +31,12 @@ const video = ref(
 </script>
 <template>
     <div class="container py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 justify-center gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 justify-center gap-10">
+
             <div v-for="(item, index) in video" :key="index">
-                <video-item :title="item.title" :vid="item.vid" autoplay="false" />
+                <slide-up>
+                    <video-item :title="item.title" :vid="item.vid" autoplay="false" class="box" />
+                </slide-up>
             </div>
         </div>
     </div>

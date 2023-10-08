@@ -23,7 +23,6 @@ onMounted(()=>{
         <div class="flex gap-2">
             <span class=""> {{ props.title }}</span>
             <div class="flex gap-2">
-<icon-play @click="playCurrentVideo" />
             </div>
         </div>
        

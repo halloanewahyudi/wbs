@@ -1,9 +1,10 @@
 <script setup>
 import gsap from 'gsap';
 import Logo from '/img/logo-white.svg'
+import Whatsapp from './icons/IconWhatsapp.vue'
 import { onMounted } from 'vue';
 function animasi() {
-    gsap.timeline({ duration: 1 })
+    gsap.timeline({ })
         .fromTo('.logo', {
             opacity: 0,
         }, {
@@ -19,12 +20,16 @@ function animasi() {
         })
         .from('.kanan', {
             width: 0,
-            duration:1
+            duration: 1
         })
         .from('.opening-text .item', {
             opacity: 0,
             translateX: -300,
-            stagger: 1,
+            stagger:.3,
+        })
+        .from('.kontak',{
+            scale:1.2,
+            opacity:0
         })
 }
 onMounted(() => {
@@ -33,17 +38,21 @@ onMounted(() => {
 </script>
 <template>
     <div
-        class="min-h-screen overflow-x-hidden flex flex-col justify-center items-center bg-gradient-to-br from-brand-400 to-brand-600 text-white">
+        class="lg:min-h-screen pt-32 lg:pt-0 overflow-x-hidden flex flex-col justify-center items-center bg-gradient-to-br from-brand-400 to-brand-600 text-white">
         <img :src="Logo" class="w-32 logo absolute top-10 left-10 z-50" alt="logo">
         <div class=" lg:flex gap-5 items-center justify-between w-screen">
-            <div class="min-h-screen flex flex-col justify-center px-6 py-10">
+            <div class="lg:min-h-screen flex flex-col justify-center px-6 py-10">
                 <div class="opening-text lg:-right-80 relative z-20 max-w-md">
                     <h1 class="item text-3xl lg:text-8xl font-bold"> Design</h1>
                     <h1 class="item text-3xl lg:text-8xl font-light">Architecture <br> & Build</h1>
-                    <p class="item text-lg  tracking-wide mt-6">
+                    <p class="item text-lg  tracking-wide mt-6 mb-6">
                         merancang bangunan yang tidak hanya memikat mata dengan estetika yang modern dan inovatif, tetapi
                         juga memiliki dampak positif pada lingkungan.
                     </p>
+                    <a href="https://wa.me/6281398740042" class="kontak italic text-white flex gap-2 items-center">
+                        <Whatsapp /> <span class="text-2xl">Hubungi Kami</span>
+
+                    </a>
                 </div>
             </div>
             <div class="kanan w-full lg:w-1/2  h-screen relative z-0">
@@ -54,7 +63,7 @@ onMounted(() => {
     </div>
 </template>
 <style scoped>
-.kanan{
+.kanan {
     background: url('/img/home-2.png')no-repeat;
     background-size: cover;
 }
